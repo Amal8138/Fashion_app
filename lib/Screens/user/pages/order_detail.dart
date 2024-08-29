@@ -3,6 +3,7 @@ import 'package:fashion/Screens/user/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:fashion/db/models/db_models.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:intl/intl.dart';
 
 class ScreenOrderDetailsUser extends StatefulWidget {
   final OrderItemsModel order;
@@ -25,6 +26,7 @@ class _ScreenOrderDetailsUserState extends State<ScreenOrderDetailsUser> {
   @override
   Widget build(BuildContext context) {
     final double totalPrice = widget.order.product.productPrice * widget.order.quantity;
+    final String formattedDate = DateFormat('yyyy-MM-dd').format(widget.order.dateTime);
 
     return Scaffold(
       appBar: AppBar(
@@ -109,7 +111,7 @@ class _ScreenOrderDetailsUserState extends State<ScreenOrderDetailsUser> {
               ),
               const SizedBox(height: 16.0),
               Text(
-                'Order Date: ${widget.order.dateTime}',
+                'Order Date: $formattedDate',
                 style: TextStyle(
                   fontSize: 16.0,
                   color: Colors.grey[600],

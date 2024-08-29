@@ -143,12 +143,12 @@ class _ScreenOrderDetailsAdminState extends State<ScreenOrderDetailsAdmin> {
             ),
             Text(
               'Product Quantity : ${widget.order.quantity}',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style:const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             const SizedBox(height: 16.0),
-            Text(
+            const Text(
               'Order Status:',
-              style: const TextStyle(
+              style:  TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
